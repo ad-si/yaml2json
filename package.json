@@ -1,0 +1,31 @@
+{
+  "name": "@adius/yaml2json",
+  "version": "0.0.0",
+  "description": "A stream transformer to convert YAML to JSON.",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "babel-node test/index.js",
+    "build": "babel -d build source"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adius/yaml2json.git"
+  },
+  "keywords": [
+    "yaml2json",
+    "yaml",
+    "json"
+  ],
+  "author": "Adrian Sieber",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adius/yaml2json/issues"
+  },
+  "homepage": "https://github.com/adius/yaml2json#readme",
+  "devDependencies": {
+    "babel": "^5.8.29"
+  },
+  "dependencies": {
+    "js-yaml": "^3.4.3"
+  }
+}
