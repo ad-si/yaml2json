@@ -4,10 +4,10 @@ import yaml from 'js-yaml'
 export default class Yaml2json extends stream.Transform {
 
 	constructor (
-		{writableObjectMode, readableObjectMode} = {
-			writableObjectMode: false,
-			readableObjectMode: true
-		}
+		{
+			writableObjectMode = false,
+			readableObjectMode = true
+		} = {}
 	) {
 		super({writableObjectMode, readableObjectMode})
 
@@ -17,7 +17,7 @@ export default class Yaml2json extends stream.Transform {
 	_flush  (done) {
 		let json = yaml.safeLoad(this.internalBuffer.toString())
 
-		if (this.readableObjectMode)
+		if (this._readableState.objectMode)
 			this.push(json)
 		else
 			this.push(JSON.stringify(json))
