@@ -16,7 +16,7 @@ npm install --save @adius/yaml2json
 import Yaml2json from '@adius/yaml2json'
 
 fs
-	.createReadableStream('path/to/some/file.txt')
+	.createReadableStream('path/to/some/file.yaml')
 	.pipe(new Yaml2json)
 	.pipe(process.stdout)
 ```
