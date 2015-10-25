@@ -6,7 +6,7 @@
   "scripts": {
     "test": "babel-node test/index.js",
     "build": "babel -d build source",
-    "prepublish": "npm test && npm build"
+    "prepublish": "npm test && npm run build"
   },
   "repository": {
     "type": "git",
