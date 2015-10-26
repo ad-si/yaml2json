@@ -9,6 +9,8 @@ fs
 	.createReadStream(path.resolve(__dirname, './test.yaml'))
 	.pipe(new Yaml2json)
 	.pipe(new stream.Transform({
-		transform: (chunk, encoding, done) => done(null, chunk)
+		writableObjectMode: true,
+		transform: (chunk, encoding, done) =>
+			done(null, JSON.stringify(chunk) + '\n')
 	}))
 	//.pipe(process.stdout)
