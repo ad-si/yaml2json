@@ -20,7 +20,7 @@ export default class Yaml2json extends stream.Transform {
 		if (this._readableState.objectMode)
 			this.push(json)
 		else
-			this.push(JSON.stringify(json))
+			this.push(JSON.stringify(json) + '\n')
 
 		done()
 	}
