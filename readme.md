@@ -13,10 +13,16 @@ npm install --save @adius/yaml2json
 ## Usage
 
 ```js
-import Yaml2json from '@adius/yaml2json'
+const Yaml2json = require('@adius/yaml2json')
 
 fs
-	.createReadableStream('path/to/some/file.yaml')
-	.pipe(new Yaml2json)
-	.pipe(process.stdout)
+  .createReadStream('path/to/some/file.yaml')
+  .pipe(new Yaml2json)
+  .pipe(new stream.Transform({
+    writableObjectMode: true,
+    transform: (chunk, encoding, done) =>
+      done(null, JSON.stringify(chunk) + '\n')
+  }))
+  .pipe(process.stdout)
+  .on('error', console.error)
 ```
