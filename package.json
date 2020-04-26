@@ -1,6 +1,6 @@
 {
   "name": "@adius/yaml2json",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "A stream transformer to convert YAML to JSON.",
   "main": "source/index.js",
   "bin": "cli.js",
